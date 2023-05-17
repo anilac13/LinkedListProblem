@@ -24,6 +24,18 @@ namespace LinkedListProblem
             }
             temp.next = newNode;
         }
+        public void AddToFirst(int data)
+        {
+            Node newNode = new Node(data);
+            if (head == null)
+            {
+                head = newNode;
+                return;
+            }
+            Node prevHead = head;
+            head = newNode;
+            head.next = prevHead;
+        }
         public void Display()
         {
             Node temp = head;
