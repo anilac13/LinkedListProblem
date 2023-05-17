@@ -10,7 +10,7 @@ namespace LinkedListProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("\nChoose option to perform \n1.Create Linked list(Add to last) \n2.Display \n3.Add elements (Add to first) \n4.Append elements \n5.Insert between elements \n6.Exit");
+                Console.WriteLine("\nChoose option to perform \n1.Create Linked list(Add to last) \n2.Display \n3.Add elements (Add to first) \n4.Append elements \n5.Insert between elements \n6.Delete first node \n7.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -38,6 +38,9 @@ namespace LinkedListProblem
                         linkedList.AddAfterElement(30, 56);
                         break;
                     case 6:
+                        linkedList.DeleteFirstNode();
+                        break;
+                    case 7:
                         flag = false;
                         break;
                 }
