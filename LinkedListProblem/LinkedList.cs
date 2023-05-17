@@ -56,6 +56,19 @@ namespace LinkedListProblem
             Node secondNode = head.next;
             head = secondNode;
         }
+        public void DeleteLastNode()
+        {
+            if (head == null)
+                return;
+            Node secondLast = head;
+            Node lastNode = head.next;
+            while (lastNode.next != null)
+            {
+                secondLast = lastNode;
+                lastNode = lastNode.next;
+            }
+            secondLast.next = null;
+        }
         public void Display()
         {
             Node temp = head;
