@@ -36,6 +36,19 @@ namespace LinkedListProblem
             head = newNode;
             head.next = prevHead;
         }
+        public void AddAfterElement(int data, int afterWhich)
+        {
+            Node newNode = new Node(data);
+            if (head == null)
+                return;
+            Node temp = head;
+            while (temp.data != afterWhich)
+            {
+                temp = temp.next;
+            }
+            newNode.next = temp.next;
+            temp.next = newNode;
+        }
         public void Display()
         {
             Node temp = head;
