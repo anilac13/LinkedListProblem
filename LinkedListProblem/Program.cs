@@ -10,7 +10,7 @@ namespace LinkedListProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("\nChoose option to perform \n1.Create Linked list(Add to last) \n2.Display \n3.Add elements (Add to first) \n4.Exit");
+                Console.WriteLine("\nChoose option to perform \n1.Create Linked list(Add to last) \n2.Display \n3.Add elements (Add to first) \n4.Append elements \n5.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -28,6 +28,11 @@ namespace LinkedListProblem
                         linkedList.AddToFirst(56);
                         break;
                     case 4:
+                        linkedList.AddToLast(56);
+                        linkedList.AddToLast(30);
+                        linkedList.AddToLast(70);
+                        break;
+                    case 5:
                         flag = false;
                         break;
                 }
