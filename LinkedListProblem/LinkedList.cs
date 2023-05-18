@@ -69,6 +69,20 @@ namespace LinkedListProblem
             }
             secondLast.next = null;
         }
+        public void SearchElement(int value)
+        {
+            Node node = head;
+            int count = 0;
+            while (node != null)
+            {
+                if (node.data == value)
+                {
+                    Console.WriteLine(count);
+                }
+                node = node.next;
+                count++;
+            }
+        }
         public void Display()
         {
             Node temp = head;

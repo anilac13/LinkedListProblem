@@ -11,7 +11,7 @@ namespace LinkedListProblem
             while (flag)
             {
                 Console.WriteLine("\nChoose option to perform \n1.Create Linked list(Add to last) \n2.Display \n3.Add elements (Add to first) \n4.Append elements \n5.Insert between elements " +
-                    "\n6.Delete first node \n7.Delete last node \n8.Exit");
+                    "\n6.Delete first node \n7.Delete last node \n8.Search element \n9.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -45,6 +45,9 @@ namespace LinkedListProblem
                         linkedList.DeleteLastNode();
                         break;
                     case 8:
+                        linkedList.SearchElement(70);
+                        break;
+                    case 9:
                         flag = false;
                         break;
                 }
