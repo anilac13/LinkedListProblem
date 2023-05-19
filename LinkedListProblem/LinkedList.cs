@@ -83,6 +83,22 @@ namespace LinkedListProblem
                 count++;
             }
         }
+        public void Delete(int data)
+        {
+            Node prevNode = head;
+            Node currentNode = head.next;
+            while (currentNode.data != data)
+            {
+                if (currentNode.next == null)
+                {
+                    Console.WriteLine($"The {data} element is not there in Linked list");
+                    return;
+                }
+                prevNode = currentNode;
+                currentNode = currentNode.next;
+            }
+            prevNode.next = currentNode.next;
+        }
         public void Display()
         {
             Node temp = head;
