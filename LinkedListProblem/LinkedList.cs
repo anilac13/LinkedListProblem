@@ -99,6 +99,76 @@ namespace LinkedListProblem
             }
             prevNode.next = currentNode.next;
         }
+        public void SortElements()
+        {
+            Node head1 = new Node(0);
+            Node head2 = new Node(0);
+
+            SplitList(head1, head2);
+
+            head1 = head1.next;
+            head2 = head2.next;
+            head2 = ReverseList(head2);
+            head = MergeList(head1, head2);
+        }
+
+        private Node MergeList(Node head1, Node head2)
+        {
+            if (head1 == null)
+                return head2;
+            if (head2 == null)
+                return head1;
+            Node temp = null;
+            if (head1.data < head2.data)
+            {
+                temp = head1;
+                head1.next = MergeList(head1.next, head2);
+            }
+            else
+            {
+                temp = head2;
+                head2.next = MergeList(head1, head2.next);
+            }
+            return temp;
+        }
+
+        private Node ReverseList(Node head2)
+        {
+            Node current = head2;
+            Node prev = null;
+            Node next;
+            while (current != null)
+            {
+                next = current.next;
+                current.next = prev;
+                prev = current;
+                current = next;
+            }
+            head2 = prev;
+            return head2;
+        }
+
+        private void SplitList(Node head1, Node head2)
+        {
+            Node ascend = head1;
+            Node descend = head2;
+            Node current = head;
+            while (current != null)
+            {
+                ascend.next = current;
+                ascend = ascend.next;
+                current = current.next;
+                if (current != null)
+                {
+                    descend.next = current;
+                    descend = descend.next;
+                    current = current.next;
+                }
+            }
+            ascend.next = null;
+            descend.next = null;
+        }
+
         public void Display()
         {
             Node temp = head;
